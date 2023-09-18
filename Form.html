@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: aquamarine;
+        padding: 100px;
+        margin: 100px;
+    }
+
+    form{
+       display: grid;
+       border: 30px;
+    }
+    form input {
+       border-radius: 200px solid balck;
+       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     font-style: oblique; 
+    }
+    span{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     font-style: oblique;
+    }
+    form button{
+       padding: 10px;
+       background-color: aquamarine;
+       color: black;
+      border-radius: 30px;
+      font-size: x-large;
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     font-style: oblique;
+    }
+    select{
+        padding: 10px;
+        margin: 10px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     font-style: oblique;
+    border-color: blueviolet;
+
+
+    }
+    input{
+        padding: 10px;
+        margin: 10px;
+       
+        
+    }
+    p{
+        margin: 20px;
+    }
+</style>
+<body>
+  <form >
+    <input type=""  placeholder="Enter First Name"  id="first" oninput="fname()" >
+    <span ></span>
+    <input type="text" placeholder="Enter Last Name" oninput="fname()"    >
+   
+    <input type="number"  placeholder="Contact" id="cont"  oninput="Con()"   maxlength="10" >
+   <span id="contact"></span>
+    
+<select  oninput="Gender()" >
+   <option  >select gender </option>
+    <option  name="other" value="Male">Male</option>
+    <option   name="other" value="Female">Female</option>
+    <option  name="other" value="Others">Others</option>
+
+</select>
+       
+    <input type="email"  placeholder="Email"     pattern="[A-Za-z0-9]+@gmail.com"   oninput="Email()">
+    
+    <input type="password"  placeholder="password" id="password"   oninput="Psw()"/>
+    <input type="password"  placeholder="comform password" id="confirmPassword"  oninput="Psw()"/>
+    <span id="message"></span>
+    <button type="submit" >Submit</button>
+  </form>  
+ 
+  
+  </section>
+
+  <p>Fname : <span id="showname"> </span></p>
+  <p>Lname:    <span id="lname"> </span></p>
+  <p>Contact:  <span id="contactT"> </span></p>
+  <p>Gender :  <span id="gender"> </span></p>
+  <p>Gmail:  <span id="Gmail"> </span></p>
+  <p>Password:  <span id="PasswordT"> </span></p>
+  <p>confirmPassword:  <span id="ConfirmPasswordT"> </span></p>
+  
+ 
+</body>
+<script> 
+function fname(){
+   
+    let first=document.getElementById('first').value;
+    let contact=document.getElementById('cont').value;
+    let data=document.getElementById('showname').textContent=event.target.value;
+    let Lastname=document.getElementById('lname').textContent=event.target.value;
+
+   
+
+
+    console.log(data+"data");
+ 
+    if(first.length<6){
+    
+    document.querySelector('span').textContent="please enter full name";
+    }
+    
+
+    else{
+        document.querySelector('span').textContent=""
+        // document.querySelector('p').textContent=""
+      
+        
+    }
+    
+}
+function Psw(){
+    
+    let password=document.getElementById('password').value;
+
+    console.log(password);
+    let confirmPassword=document.getElementById('confirmPassword').value;
+    let aa=document.getElementById('PasswordT').textContent=event.target.value;
+    let bb=document.getElementById('ConfirmPasswordT').textContent=event.target.value;
+   
+
+    console.log(confirmPassword);
+    let 
+    // let message=document.getElementById('message').value;
+   
+    if (password === confirmPassword) {
+        document.getElementById('message').textContent="Password matched";
+        return true;
+    }  else {
+        document.getElementById('message').textContent="Password does not match";
+        return false;
+    }
+}
+function Con(){
+    let contact=document.getElementById('cont').value;
+    // let span=document.getElementById('contact').value
+    let contactT=document.getElementById('contactT').textContent=event.target.value;
+   
+    if(contact.length<10 ){
+        document.getElementById('contact').textContent="only 10 digit number";
+    } 
+    else{
+        document.getElementById('contact').textContent=" ";
+    }
+}
+function Gender(){
+    let aa=document.getElementById('gender').textContent=event.target.value;
+}
+function Email(){
+    let aa=document.getElementById('Gmail').textContent=event.target.value;
+}
+
+function Data(e){
+    aa=e.target.value
+    console.log(aa)
+  let cc= document.getElementById('showName').a;
+   console.log(cc+"values")
+
+}
+// function select(){
+//     // let aaa=document.getElementById('gender').value;
+//     let aaa=document.querySelector('select').value;
+//     if(aaa){
+//         console.log("eyyy")
+//         return false;
+//     }else{
+//         document.getElementById('selectId').textContent='plzzz='
+//         return true;
+//         console.log("kkkkyy")
+//     }
+//     console.log(aaa);
+// }
+    // let contact=document.getElementById('cont').value;
+    // console.log(contact)
+    // if(contact.length<10){
+    //     document.querySeector('span').textContent="please enter 10 digit number";
+    // }
+    // else{
+ //     document.querySelector('span').textContent=""
+    // }
+        
+
+
+    
+
+</script>
+</html>
